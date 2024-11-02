@@ -328,4 +328,3 @@ This set of hooks is curated and maintained by the darkroom.engineering team:
 ## License
 
 [The MIT License.](https://opensource.org/licenses/MIT)
-Тест для запуска Actions
