@@ -1,4 +1,3 @@
-# Trigger GitHub Actions
 name: Build Lenis
 
 on:
@@ -9,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -26,7 +24,7 @@ jobs:
         run: npm run build
 
       - name: Upload build files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: lenis-build
           path: ./dist/
