@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenis Test</title>
+    <script src="lenis.min.js"></script>
+    <style>
+        body {
+            height: 200vh; /* Для демонстрации прокрутки */
+            background: linear-gradient(to bottom, #f0f0f0, #ccc);
+        }
+    </style>
+</head>
+<body>
+    <h1>Lenis Smooth Scroll Test</h1>
+    <p>Scroll down to see the effect.</p>
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: t => Math.min(1, 1.5 * t), // пример easing
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smoothWheel: true,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    </script>
+</body>
+</html>
